@@ -16,6 +16,11 @@ public class Rolex {
 void shouldRetrieveStoredProduct() {
     JdbcDataSource dataSource = new JdbcDataSource();
     dataSource.setUrl("jdbc:h2:mem:test");
+
+    dataSource.getConnection().createStatement().executeUpdate(
+            sql: "create table products (name varchar(100))"
+    );
+
     ProductDao dao = new ProductDao(new JdbcDataSource());
     String ProductName = PickOne(new String[]{"Rolex","Hublot","Taghauer","Omega","Baume&Mercier"});
     dao.insertProduct(ProductName);
