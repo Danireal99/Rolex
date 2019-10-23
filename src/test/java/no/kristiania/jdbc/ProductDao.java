@@ -15,6 +15,6 @@ public class ProductDao {
 
 
     public List<String> listAll() {
-        return Collections.singletonList("Rolex");
+        return products;
     }
 }
