@@ -10,7 +10,7 @@ public class Rolex {
 void shouldRetrieveStoredProduct() {
 
     ProductDao dao = new ProductDao();
-    dao.insertProduct("Rolex");
+    dao.insertProduct("Role");
     assertThat(dao.listAll()).contains("Rolex");
 
 }
