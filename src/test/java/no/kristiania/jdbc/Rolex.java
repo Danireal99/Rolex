@@ -2,7 +2,8 @@ package no.kristiania.jdbc;
 
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 public class Rolex {
 
