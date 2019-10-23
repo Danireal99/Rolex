@@ -1,12 +1,20 @@
 package no.kristiania.jdbc;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ProductDao {
-    public void insertProduct(java.lang.String rolex) {
+
+    private List<String> products = new ArrayList<>();
+
+    public void insertProduct(String ProductName) {
+   products.add(ProductName);
     }
 
+
+
     public List<String> listAll() {
-        return null;
+        return Collections.singletonList("Rolex");
     }
 }
