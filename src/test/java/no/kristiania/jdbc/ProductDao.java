@@ -45,6 +45,7 @@ public class ProductDao {
                         result.add(rs.getString(columnLabel: "name"));
                     }
                     return result;
+
                 }
             }
 
