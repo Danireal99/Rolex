@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="postgres@localhost" uuid="4a454bcb-156a-45dd-8b92-1290a77ffac8">
+    <data-source source="LOCAL" name="postgres@localhost" uuid="24d697c2-b6a4-4ea0-88cd-b1e0a6aeb82a">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="rolex@localhost" uuid="6cb630e4-34ca-421f-a1c3-b1a0f97ca52f">
+    <data-source source="LOCAL" name="webshopdb@localhost" uuid="7f998145-3444-45c9-9535-cc97afb606bc">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/webshopdb</jdbc-url>
     </data-source>
   </component>
 </project>

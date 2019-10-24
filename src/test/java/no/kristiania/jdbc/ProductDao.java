@@ -52,7 +52,7 @@ public class ProductDao {
 
 public static void main (String[] args) throws SQLException {
             PGSimpleDataSource dataSource = new PGSimpleDataSource();
-            dataSource.setUrl("jdbc:postgresql://localhost:5432/rolex");
+            dataSource.setUrl("jdbc:postgres://localhost:5432/rolex");
             dataSource.setUser("rolex");
             dataSource.setPassword("password");
             ProductDao productDao = new ProductDao(new PGSimpleDataSource());
