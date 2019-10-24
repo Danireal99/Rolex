@@ -1,5 +1,7 @@
 package no.kristiania.jdbc;
 
+import org.postgresql.ds.PGSimpleDataSource;
+
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -48,8 +50,12 @@ public class ProductDao {
         }
 
 
-       public static void main(String[] args) {
-            ProductDao productDao = new ProductDao(dataSource);
+public static void main (String[] args) throws SQLException {
+            PGSimpleDataSource dataSource = new PGSimpleDataSource();
+            dataSource.setUrl("jdbc:postgresql://localhost:5432/rolex");
+            dataSource.setUser("rolex");
+            dataSource.setPassword("password");
+            ProductDao productDao = new ProductDao(new PGSimpleDataSource());
             productDao.insertProduct( productName: "Test");
         }
     }
