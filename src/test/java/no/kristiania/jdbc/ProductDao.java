@@ -25,7 +25,7 @@ public class ProductDao {
        PreparedStatement statement = conn.prepareStatement(
                sql: "insert into products (name) values (?)"
           );
-       statement.setString( parameterIndex 1, productName);
+       statement.setString(  1, productName);
        statement.executeUpdate();
       } catch (SQLException e) {
           e.printStackTrace();
