@@ -61,13 +61,13 @@ public class ProductDao {
         String productName = new Scanner(System.in).nextLine();
 
         Properties properties = new Properties();
-        properties.load(new FileReader("rolex.properties"));
+        properties.load(new FileReader("postgres.properties"));
 
 
         PGSimpleDataSource dataSource = new PGSimpleDataSource();
         dataSource.setUrl("jdbc:postgresql://localhost:5432/rolex");
         dataSource.setUser("postgres");
-        dataSource.setPassword(properties.getProperty("datasource.password"));
+        dataSource.setPassword(properties.getProperty("dataSource.password"));
         ProductDao productDao = new ProductDao(dataSource);
         productDao.insertProduct(productName);
 

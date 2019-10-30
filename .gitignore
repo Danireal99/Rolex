@@ -2,3 +2,4 @@
 /dataSources.local.xml
 /dataSources/
 /target
+!/postgres.properties
