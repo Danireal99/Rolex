@@ -22,41 +22,40 @@ public class ProductDao {
 
     public void insertProduct(String productName) throws SQLException {
         try (Connection conn = dataSource.getConnection()) {
-       PreparedStatement statement = conn.prepareStatement(
-               sql: "insert into products (name) values (?)"
-          );
-       statement.setString(  1, productName);
-       statement.executeUpdate();
-      } catch (SQLException e) {
-          e.printStackTrace();
-      }
+            PreparedStatement statement = conn.prepareStatement(
+                    "insert into products (name) values (?)"
+            );
+            statement.setString(1, productName);
+            statement.executeUpdate();
+        }
     }
 
 
-    public List<String> listAll() {
+    public List<String> listAll() throws SQLException {
         try (Connection connection = dataSource.getConnection()) {
             try (PreparedStatement statement = connection.prepareStatement(
-                    sql: "select * from products"
-            ) {
-                try (ResultSet rs = statement.executeQuerry())
-                List<String> result = new ArrayList<>();
+                    "select * from products"
+            )) {
+                try (ResultSet rs = statement.executeQuery()) {
+                    List<String> result = new ArrayList<>();
 
-                while (rs.next()) {
-                    result.add(rs.getString(columnLabel "name"));
+                    while (rs.next()) {
+                        result.add(rs.getString("name"));
 
+                    }
+                    return result;
                 }
-                return result;
             }
         }
+    }
 
 
-public static void main (String[] args) throws SQLException {
-            PGSimpleDataSource dataSource = new PGSimpleDataSource();
-            dataSource.setUrl("jdbc:postgres://localhost:5432/rolex");
-            dataSource.setUser("rolex");
-            dataSource.setPassword("password");
-            ProductDao productDao = new ProductDao(new PGSimpleDataSource());
-            productDao.insertProduct( productName: "Test");
-        }
+    public static void main(String[] args) throws SQLException {
+        PGSimpleDataSource dataSource = new PGSimpleDataSource();
+        dataSource.setUrl("jdbc:postgres://localhost:5432/rolex");
+        dataSource.setUser("rolex");
+        dataSource.setPassword("password");
+        ProductDao productDao = new ProductDao(new PGSimpleDataSource());
+        productDao.insertProduct("Test");
     }
 }
